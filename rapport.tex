@@ -1,0 +1,164 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% 													%%%%%
+%%%%%	Aller voir le lien suivant :					%%%%%
+%%%%%													%%%%%
+%%%%%	http://fr.wikibooks.org/wiki/LaTeX				%%%%%
+%%%%%													%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt]{report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% 	pour le français et les accents 	      %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc} 
+\usepackage[french]{babel} 
+
+%%%%% 		Pour les marges de la page			 %%%%%%%%
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%%%%% Pour les url %%%%%
+\usepackage{hyperref}
+
+%%%%% Gestion des numeros de sous-sous-sections %%%%%
+\usepackage{titlesec}
+\setcounter{secnumdepth}{3}
+
+%%%%% Gestion des sous sous section dans la TOC %%%%%
+\setcounter{tocdepth}{3}
+
+%%%%% Insertion des images %%%%%
+\usepackage{graphicx}
+
+%%%%% Gestion du centrage des titres %%%%%
+\usepackage{sectsty}
+\usepackage{lipsum}
+
+%%%%% Demarrage à 0 des sections %%%%%%
+\renewcommand{\thesection}{\arabic{section}}
+\setcounter{section}{0}
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	%ligne horizontale
+
+\parindent=2cm
+
+%%% Forcer les images à rester dans leur section
+\usepackage[section]{placeins}
+
+%%% Utiliser un formatage pour le code 
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+
+%%%%%%%%%%%%%%%%%%%  DEBUT DU RAPPORT %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\sffamily
+
+
+%%%%%%%%%%%%%%%%%%%  PAGE DE GARDE %%%%%%%%%%%%%%%%%%%%%%
+\input{./title.tex}
+%\maketitle	
+
+%%%%%%%%%%%%%%%%%%%  DEBUT INTRODUCTION %%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{center}
+\section*{Introduction}
+\end{center}
+\paragraph{}
+
+
+%%%%%%%%%%%%%%%%%%%  FIN INTRODUCTION %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%  DEBUT TABLE DES MATIERES %%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%  FIN TABLE DES MATIERES %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%  DEBUT %%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Sogeti}
+	\subsection{Activités}
+	\paragraph*{}
+	Sogeti est une filiale du groupe Capgemini. C'est également l’un des leaders des services technologiques et du test logiciel, spécialisé dans la gestion des applicatifs, des infrastructures et les services en ingénierie.\\
+	Sogeti se décompose en 4 domaines d'interventions :\\
+	\begin{itemize}
+		\item[•] Application
+		\item[•] Testing
+		\item[•] Sécurité
+		\item[•] Infrastructure
+	\end{itemize}
+	
+	\subsection{Présentation de l'équipe}
+	\paragraph*{}
+	
+	
+\newpage	
+\section{Activités du CDSI (Centre De Service Intégration)}
+	\subsection{Côté Mainframe (MVS)}
+	\paragraph*{}
+	
+	
+	\subsection{Côté Open (Unix)}
+	\paragraph*{}
+	Weblogic, VTOM, XFB Gateway 
+	
+\newpage	
+\section{Activités de CDSP (Centre De Service Production)}
+	\subsection{Migration de batch VTOM}
+	\paragraph*{}
+	
+	
+	\subsection{Activités annexes}
+	\paragraph*{}
+	
+	
+\newpage	
+\begin{center}
+\section*{Conclusion}
+\end{center}
+\paragraph*{}
+
+
+
+\end{document}
